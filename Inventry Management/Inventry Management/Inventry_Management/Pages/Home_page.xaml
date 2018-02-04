@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+            x:Class="Inventry_Management.Pages.Home_page" Title="Home">
+    <ContentPage Title="Product">
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Icon="edit.png" Clicked="Update_Clicked"/>
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+            <chart:SfChart Title="Product Summery">
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis/>
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis/>
+                </chart:SfChart.SecondaryAxis>
+                <chart:SfChart.Series>
+                    <chart:ColumnSeries x:Name="_Series1" XBindingPath="Name" Color="ForestGreen" StrokeColor="Yellow" StrokeWidth="2.5" YBindingPath="Value" EnableTooltip="True">
+                        <chart:ColumnSeries.DataMarker>
+                            <chart:ChartDataMarker/>
+                        </chart:ColumnSeries.DataMarker>
+                    </chart:ColumnSeries>
+                </chart:SfChart.Series>
+            </chart:SfChart>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Meterial">
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Icon="edit.png" Clicked="Update_Clicked"/>
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+            <chart:SfChart>
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis/>
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis/>
+                </chart:SfChart.SecondaryAxis>
+                <chart:SfChart.Series>
+                    <chart:ColumnSeries x:Name="_Series2" XBindingPath="Name" Color="ForestGreen" StrokeColor="Yellow" StrokeWidth="2.5" YBindingPath="Value" EnableTooltip="True">
+                        <chart:ColumnSeries.DataMarker>
+                            <chart:ChartDataMarker/>
+                        </chart:ColumnSeries.DataMarker>
+                    </chart:ColumnSeries>
+                </chart:SfChart.Series>
+            </chart:SfChart>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

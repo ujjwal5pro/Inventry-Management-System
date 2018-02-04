@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xlab="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="Inventry_Management.Pages.UpdateChart_Page">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" x:Name="Back" Clicked="Back_Clicked"/>
+        <ToolbarItem Icon="save.png" x:Name="Update" Clicked="Update_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="#d3d3d3">
+        <Frame Margin="50">
+            <StackLayout>
+                <Label Text="Section" FontAttributes="Bold"/>
+                <Picker Title="Select Section" x:Name="Section" SelectedIndexChanged="Section_SelectedIndexChanged"/>
+                <Label Text="Operation" FontAttributes="Bold"/>
+                <xlab:BindableRadioGroup x:Name="_RadioButton" Orientation="Horizontal"/>
+                <Label Text="Operative Item"/>
+                <Picker x:Name="Item_Picker" Title="Select Item"/>
+                <Label Text="Operative Value"/>
+                <Entry x:Name="NewValue_entry" Placeholder="eg: 123"/>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

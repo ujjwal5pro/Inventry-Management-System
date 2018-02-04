@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventry_Management.Pages.Meterial_page" Title="Meterial">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" x:Name="Common_button" Clicked="Common_button_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid x:Name="Meterial_view_0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <SearchBar Grid.Row="0" x:Name="Meterial_searchbar" Placeholder="Search Meterial" TextChanged="Meterial_searchbar_TextChanged"></SearchBar>
+                <ListView Grid.Row="1" x:Name="Meterial_listview" VerticalOptions="FillAndExpand" ItemTapped="Meterial_listview_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}">
+                                <TextCell.ContextActions>
+                                    <MenuItem x:Name="Delete_button" Icon="delete.png" Clicked="Delete_button_Clicked"/>
+                                    <MenuItem x:Name="Edit_button" Icon="update.png" Clicked="Edit_button_Clicked"/>
+                                </TextCell.ContextActions>
+                            </TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Frame x:Name="Meterial_view_1" IsVisible="False" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--<Label Grid.Row="0" Text="close" TextColor="Red" Margin="0,10,10,10" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Close_button_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>-->
+                    <Frame Grid.Row="0" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center" BackgroundColor="White">
+                        <Image Source="meterial.png" HeightRequest="75" WidthRequest="75"/>
+                        <!--<Label Text="Image" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>-->
+                    </Frame>
+                    <Label Grid.Row="1" Text="Name" FontAttributes="Bold" FontSize="Medium"/>
+                    <Entry Grid.Row="2" Text="{Binding Name}" x:Name="Meterial_Name" Placeholder="Enter Name" FontAttributes="Bold" FontSize="Medium"></Entry>
+                    <Label Grid.Row="3" Text="Value" FontAttributes="Bold" FontSize="Medium"/>
+                    <Entry Grid.Row="4" Text="{Binding Value}" x:Name="Meterial_Value" Placeholder="Enter Value" FontAttributes="Bold" FontSize="Medium" Keyboard="Numeric"></Entry>
+                    <Label Grid.Row="5" Text="Description" FontAttributes="Bold" FontSize="Medium"/>
+                    <Editor Grid.Row="6" Text="{Binding Description}" x:Name="Meterial_Description"></Editor>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

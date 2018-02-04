@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Inventry_Management"
+             x:Class="Inventry_Management.MainPage" Title="Home">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Main Menu">
+            <StackLayout Spacing="0">
+                <Frame HasShadow="True" Margin="0,25,0,0">
+                    <StackLayout>
+                        <Label Text="Inventry" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Label Text="Management" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+                <ListView x:Name="Main_Menu_ListView" ItemSelected="Main_Menu_ListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding _Image}" HeightRequest="25" WidthRequest="25" Margin="25,0,0,0"/>
+                                    <Label Text="{Binding Name}" VerticalTextAlignment="Center" Margin="10,0,0,0"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <!--<MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                --><!--sample text--><!--
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label x:Name="display" Text="Home" FontSize="Medium" FontAttributes="Bold" TextColor="Blue"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>-->
+</MasterDetailPage>
